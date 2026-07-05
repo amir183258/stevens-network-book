@@ -1,7 +1,7 @@
 /******************************************************************************
  *
  * Project:  Stevens Book - Big Library
- * Purpose:  
+ * Purpose:  This function compares 2 sockaddr and return the result.
  * Author:   A. H. Ebrahimi <amirhossein183258 at gmail.com>
  *
  ****************************************************************************/
