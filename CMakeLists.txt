@@ -10,6 +10,7 @@ add_library(unp STATIC
 	lib/wrapunix.c
 	lib/sock_ntop.c
 	lib/sock_bind_wild.c
+	lib/sock_cmp_addr.c
 )
 
 target_include_directories(unp PUBLIC

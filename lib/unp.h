@@ -39,6 +39,9 @@ ssize_t Read(int fd, void *ptr, size_t nbytes);
 int sock_bind_wild(int sockfd, int family);
 int Sock_bind_wild(int sockfd, int family);
 
+/* sock_cmp_addr.c */
+int sock_cmp_addr(const SA *sa1, const SA *sa2, socklen_t salen);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
