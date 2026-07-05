@@ -35,6 +35,10 @@ char* sock_ntop(const SA *sa, socklen_t salen);
 void Close(int fd);
 ssize_t Read(int fd, void *ptr, size_t nbytes);
 
+/* sock_bind_wild.c */
+int sock_bind_wild(int sockfd, int family);
+int Sock_bind_wild(int sockfd, int family);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
