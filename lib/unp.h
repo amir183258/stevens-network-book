@@ -58,6 +58,9 @@ void sock_set_addr(SA *sa, socklen_t salen, const void *addr);
 /* sock_set_port.c */
 void sock_set_port(SA *sa, socklen_t salen, int port);
 
+/* sock_set_wild.c */
+void sock_set_wild(SA *sa, socklen_t salen);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);

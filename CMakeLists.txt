@@ -16,6 +16,7 @@ add_library(unp STATIC
 	lib/sock_ntop_host.c
 	lib/sock_set_addr.c
 	lib/sock_set_port.c
+	lib/sock_set_wild.c
 )
 
 target_include_directories(unp PUBLIC
