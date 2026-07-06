@@ -18,6 +18,7 @@ add_library(unp STATIC
 	lib/sock_set_port.c
 	lib/sock_set_wild.c
 	lib/readn.c
+	lib/writen.c
 )
 
 target_include_directories(unp PUBLIC

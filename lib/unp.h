@@ -66,6 +66,10 @@ void sock_set_wild(SA *sa, socklen_t salen);
 ssize_t readn(int fd, void *vptr, size_t n);
 ssize_t Readn(int fd, void *ptr, size_t nbytes);
 
+/* writen.c */
+ssize_t writen(int fd, const void *vptr, size_t n);
+ssize_t Writen(int fd, void *ptr, size_t nbytes);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
