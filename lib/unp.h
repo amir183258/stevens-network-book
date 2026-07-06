@@ -48,6 +48,10 @@ int sock_cmp_port(const SA *sa1, const SA *sa2, socklen_t salen);
 /* sock_get_port.c */
 int sock_get_port(const SA *sa, socklen_t salen);
 
+/* sock_ntop_host */
+char* sock_ntop_host(const SA *sa, socklen_t salen);
+char* Sock_ntop_host(const SA *sa, socklen_t salen);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
