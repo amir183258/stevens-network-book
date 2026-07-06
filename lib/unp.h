@@ -18,6 +18,7 @@
 #include <string.h>
 
 #include <sys/socket.h>
+#include <sys/types.h> // ssize_t
 
 #define MAXLINE 4096
 #define LISTENQ 1024
@@ -60,6 +61,10 @@ void sock_set_port(SA *sa, socklen_t salen, int port);
 
 /* sock_set_wild.c */
 void sock_set_wild(SA *sa, socklen_t salen);
+
+/* readn.c */
+ssize_t readn(int fd, void *vptr, size_t n);
+ssize_t Readn(int fd, void *ptr, size_t nbytes);
 
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
