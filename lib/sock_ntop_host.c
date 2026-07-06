@@ -1,7 +1,7 @@
 /******************************************************************************
  *
  * Project:  Stevens Book - Big Library
- * Purpose:  
+ * Purpose:  Returns address in host representation.
  * Author:   A. H. Ebrahimi <amirhossein183258 at gmail.com>
  *
  ****************************************************************************/
