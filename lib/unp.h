@@ -70,6 +70,12 @@ ssize_t Readn(int fd, void *ptr, size_t nbytes);
 ssize_t writen(int fd, const void *vptr, size_t n);
 ssize_t Writen(int fd, void *ptr, size_t nbytes);
 
+/* readline.c */
+/* this implementation is not thread-safe */
+ssize_t readline(int fd, void *vptr, size_t maxlen);
+ssize_t readlinebuf(void **vptrptr); /* expose readline buffer */
+ssize_t Readline(int fd, void *ptr, size_t maxlen);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
