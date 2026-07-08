@@ -85,3 +85,15 @@ target_link_libraries(daytimetcpsrv1
 set_target_properties(daytimetcpsrv1 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/intro
 )
+
+##
+
+add_executable(tcpserv01
+	src/tcpdiserv/tcpserv01.c
+)
+target_link_libraries(tcpserv01
+	unp
+)
+set_target_properties(tcpserv01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tcpdiserv
+)

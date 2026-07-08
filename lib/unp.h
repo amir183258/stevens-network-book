@@ -85,6 +85,9 @@ ssize_t Readline(int fd, void *ptr, size_t maxlen);
 int sockfd_to_family(int sockfd);
 int Sockfd_to_family(int sockfd);
 
+/* str_echo.c */
+void str_echo(int sockfd);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
