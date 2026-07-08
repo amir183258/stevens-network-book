@@ -72,3 +72,15 @@ target_link_libraries(byteorder
 set_target_properties(byteorder PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/intro
 )
+
+##
+
+add_executable(daytimetcpsrv1
+	src/intro/daytimetcpsrv1.c
+)
+target_link_libraries(daytimetcpsrv1
+	unp
+)
+set_target_properties(daytimetcpsrv1 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/intro
+)
