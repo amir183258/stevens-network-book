@@ -23,6 +23,10 @@
 #define MAXLINE 4096
 #define LISTENQ 1024
 
+/* Define some port number that can be used for examples */
+#define SERV_PORT 9877
+#define SERV_PORT_STR "9877"
+
 /* Shortens all the typecasts of pointer arguments: */
 #define SA struct sockaddr
 
@@ -35,6 +39,7 @@ char* sock_ntop(const SA *sa, socklen_t salen);
 /* warpunix.c */
 void Close(int fd);
 ssize_t Read(int fd, void *ptr, size_t nbytes);
+pid_t Fork(void);
 
 /* sock_bind_wild.c */
 int sock_bind_wild(int sockfd, int family);
