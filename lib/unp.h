@@ -73,7 +73,7 @@ ssize_t Readn(int fd, void *ptr, size_t nbytes);
 
 /* writen.c */
 ssize_t writen(int fd, const void *vptr, size_t n);
-ssize_t Writen(int fd, void *ptr, size_t nbytes);
+void Writen(int fd, void *ptr, size_t nbytes);
 
 /* readline.c */
 /* this implementation is not thread-safe */
