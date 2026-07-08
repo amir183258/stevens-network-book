@@ -39,8 +39,7 @@ int main(int argc, char **argv) {
 		// child process
 		if ( (childpid = Fork()) == 0) {
 			Close(listenfd); // close listening socket
-			puts("hi");
-			//str_echo(connfd); // process the request
+			str_echo(connfd); // process the request
 			exit(0);
 		}
 
