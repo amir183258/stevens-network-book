@@ -20,6 +20,7 @@ add_library(unp STATIC
 	lib/readn.c
 	lib/writen.c
 	lib/readline.c
+	lib/sockfd_to_family.c
 )
 
 target_include_directories(unp PUBLIC

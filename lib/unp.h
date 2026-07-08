@@ -76,6 +76,10 @@ ssize_t readline(int fd, void *vptr, size_t maxlen);
 ssize_t readlinebuf(void **vptrptr); /* expose readline buffer */
 ssize_t Readline(int fd, void *ptr, size_t maxlen);
 
+/* sockfd_to_family.c */
+int sockfd_to_family(int sockfd);
+int Sockfd_to_family(int sockfd);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
