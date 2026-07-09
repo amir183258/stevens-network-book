@@ -34,6 +34,9 @@
 /* Define bzero() as a macro */
 #define bzero(ptr, n) memset(ptr, 0, n);
 
+/* For signal handlers */
+typedef void Sigfunc(int);
+
 /* sock_ntop.c */
 char* sock_ntop(const SA *sa, socklen_t salen);
 
@@ -99,6 +102,10 @@ void Fputs(const char *ptr, FILE *stream);
 
 /* str_cli.c */
 void str_cli(FILE *fp, int sockfd);
+
+/* sinal.c */
+Sigfunc* signal(int signo, Sigfunc *func);
+Sigfunc* Signal(int signo, Sigfunc *func);
 
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
