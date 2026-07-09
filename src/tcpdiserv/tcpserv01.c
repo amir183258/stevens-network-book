@@ -13,6 +13,7 @@
 #include <sys/types.h>
 #include <arpa/inet.h>
 #include <signal.h>
+#include <errno.h>
 
 #include "unp.h"
 
@@ -39,7 +40,12 @@ int main(int argc, char **argv) {
 
 	for ( ; ; ) {
 		clilen = sizeof(cliaddr);
-		connfd = Accept(listenfd, (SA *) &cliaddr, &clilen);
+		if ( (connfd = accept(listenfd, (SA *) &cliaddr, &clilen)) < 0) {
+			if (errno == EINTR)
+				continue; // back to for
+			else
+				err_sys("accept error");
+		}
 
 		// child process
 		if ( (childpid = Fork()) == 0) {
