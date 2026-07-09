@@ -95,6 +95,7 @@ set_target_properties(daytimetcpsrv1 PROPERTIES
 
 add_executable(tcpserv01
 	src/tcpdiserv/tcpserv01.c
+	src/tcpdiserv/sigchldwait.c
 )
 target_link_libraries(tcpserv01
 	unp

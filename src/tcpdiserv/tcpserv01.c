@@ -12,8 +12,11 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
+#include <signal.h>
 
 #include "unp.h"
+
+void sig_chld(int signo);
 
 int main(int argc, char **argv) {
 	int listenfd, connfd;
@@ -31,6 +34,8 @@ int main(int argc, char **argv) {
 
 	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
 	Listen(listenfd, LISTENQ);
+
+	Signal(SIGCHLD, sig_chld);
 
 	for ( ; ; ) {
 		clilen = sizeof(cliaddr);
