@@ -23,6 +23,7 @@ add_library(unp STATIC
 	lib/sockfd_to_family.c
 	lib/str_echo.c
 	lib/wraplib.c
+	lib/wrapstdio.c
 )
 
 target_include_directories(unp PUBLIC
