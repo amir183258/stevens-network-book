@@ -22,6 +22,7 @@ add_library(unp STATIC
 	lib/readline.c
 	lib/sockfd_to_family.c
 	lib/str_echo.c
+	lib/wraplib.c
 )
 
 target_include_directories(unp PUBLIC
