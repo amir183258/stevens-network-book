@@ -97,6 +97,9 @@ void Fclose(FILE *fp);
 char* Fgets(char *ptr, int n, FILE *stream);
 void Fputs(const char *ptr, FILE *stream);
 
+/* str_cli.c */
+void str_cli(FILE *fp, int sockfd);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
