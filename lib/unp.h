@@ -92,6 +92,11 @@ void str_echo(int sockfd);
 /* wraplib.c */
 void Inet_pton(int family, const char *strptr, void *addrptr);
 
+/* wrapstdio.c */
+void Fclose(FILE *fp);
+char* Fgets(char *ptr, int n, FILE *stream);
+void Fputs(const char *ptr, FILE *stream);
+
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 int Socket(int family, int type, int protocol);
