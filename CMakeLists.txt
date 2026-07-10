@@ -127,3 +127,16 @@ target_link_libraries(tcpcli04
 set_target_properties(tcpcli04 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tcpdiserv
 )
+
+##
+
+add_executable(tcpserv04
+	src/tcpdiserv/tcpserv04.c
+	src/tcpdiserv/sigchldwaitpid.c
+)
+target_link_libraries(tcpserv04
+	unp
+)
+set_target_properties(tcpserv04 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tcpdiserv
+)
