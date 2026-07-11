@@ -34,6 +34,10 @@
 /* Define bzero() as a macro */
 #define bzero(ptr, n) memset(ptr, 0, n);
 
+/* min and max */
+#define min(a, b) ((a) < (b) ? (a) : (b))
+#define max(a, b) ((a) > (b) ? (a) : (b))
+
 /* For signal handlers */
 typedef void Sigfunc(int);
 
