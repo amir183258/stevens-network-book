@@ -141,7 +141,10 @@ add_executable(tcpserv04
 	# src/tcpdiserv/str_ech09.c
 
 	# for using select()
-	src/select/strcliselect01.c
+	# src/select/strcliselect01.c
+
+	# for using shutdown()
+	src/select/strcliselect02.c
 )
 target_link_libraries(tcpserv04
 	unp
