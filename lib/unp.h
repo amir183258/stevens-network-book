@@ -44,10 +44,11 @@ typedef void Sigfunc(int);
 /* sock_ntop.c */
 char* sock_ntop(const SA *sa, socklen_t salen);
 
-/* warpunix.c */
+/* wrapunix.c */
 void Close(int fd);
-ssize_t Read(int fd, void *ptr, size_t nbytes);
 pid_t Fork(void);
+ssize_t Read(int fd, void *ptr, size_t nbytes);
+void Write(int fd, void *ptr, size_t nbytes);
 
 /* sock_bind_wild.c */
 int sock_bind_wild(int sockfd, int family);
@@ -118,7 +119,6 @@ void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
 void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Listen(int fd, int backlog);
-void Write(int fd, void *ptr, size_t nbytes);
 
 /* error.c */
 void err_sys(const char *fmt, ...);
