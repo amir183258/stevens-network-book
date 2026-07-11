@@ -135,9 +135,13 @@ set_target_properties(tcpcli04 PROPERTIES
 add_executable(tcpserv04
 	src/tcpdiserv/tcpserv04.c
 	src/tcpdiserv/sigchldwaitpid.c
+
 	# for sum server
 	# src/tcpdiserv/str_ech08.c
-	#src/tcpdiserv/str_ech09.c
+	# src/tcpdiserv/str_ech09.c
+
+	# for using select()
+	src/select/strcliselect01.c
 )
 target_link_libraries(tcpserv04
 	unp
