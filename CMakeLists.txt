@@ -120,8 +120,15 @@ set_target_properties(tcpcli01 PROPERTIES
 
 add_executable(tcpcli04
 	src/tcpdiserv/tcpcli04.c
+
 	#for sum client
 	#src/tcpdiserv/str_cli09.c
+
+	# for using select()
+	# src/select/strcliselect01.c
+
+	# for using shutdown()
+	src/select/strcliselect02.c
 )
 target_link_libraries(tcpcli04
 	unp
@@ -139,12 +146,6 @@ add_executable(tcpserv04
 	# for sum server
 	# src/tcpdiserv/str_ech08.c
 	# src/tcpdiserv/str_ech09.c
-
-	# for using select()
-	# src/select/strcliselect01.c
-
-	# for using shutdown()
-	src/select/strcliselect02.c
 )
 target_link_libraries(tcpserv04
 	unp
