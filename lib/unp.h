@@ -114,6 +114,7 @@ Sigfunc* Signal(int signo, Sigfunc *func);
 
 /* wrapsock.c */
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
+void Shutdown(int fd, int how);
 int Socket(int family, int type, int protocol);
 void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);

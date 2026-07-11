@@ -33,6 +33,11 @@ again:
 	return n;
 }
 
+void Shutdown(int fd, int how) {
+	if (shutdown(fd, how) < 0)
+		err_sys("shutdown error");
+}
+
 int Socket(int family, int type, int protocol) {
 	int n;
 	if ((n = socket(family, type, protocol)) < 0)
