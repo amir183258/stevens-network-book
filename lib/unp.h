@@ -119,6 +119,7 @@ void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
 void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Listen(int fd, int backlog);
+int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
 
 /* error.c */
 void err_sys(const char *fmt, ...);

@@ -12,6 +12,7 @@
 #include <errno.h>
 
 #include <sys/socket.h>
+#include <sys/select.h>
 
 #include "./unp.h"
 
@@ -62,4 +63,12 @@ void Listen(int fd, int backlog) {
 
 	if (listen(fd, backlog) < 0)
 		err_sys("listen error");
+}
+
+int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
+		struct timeval *timeout) {
+	int n;
+	if ( (n = select(nfds, readfds, writefds, exceptfds, timeout)) < 0)
+		err_sys("select error");
+	return n;
 }
