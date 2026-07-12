@@ -13,6 +13,7 @@
 
 #include <sys/socket.h>
 #include <sys/select.h>
+#include <poll.h>
 
 #include "./unp.h"
 
@@ -69,6 +70,17 @@ void Listen(int fd, int backlog) {
 	if (listen(fd, backlog) < 0)
 		err_sys("listen error");
 }
+
+#ifdef HAVE_POLL
+int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout) {
+	int n;
+
+	if ( (n = poll(fdarray, nfds, timeout)) < 0)
+		err_sys("poll error");
+
+	return n;
+}
+#endif
 
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
 		struct timeval *timeout) {

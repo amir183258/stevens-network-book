@@ -20,6 +20,7 @@
 
 #include <sys/socket.h>
 #include <sys/types.h> // ssize_t
+#include <poll.h>
 
 #define MAXLINE 4096
 #define LISTENQ 1024
@@ -37,6 +38,10 @@
 /* min and max */
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
+
+/* For poll () */
+#define INFTIM -1
+#define OPEN_MAX 1024 // my system does not have OPEN_MAX macro
 
 /* For signal handlers */
 typedef void Sigfunc(int);
@@ -120,6 +125,9 @@ void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
 void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Listen(int fd, int backlog);
+#ifdef HAVE_POLL
+int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout);
+#endif
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
 
 /* error.c */
