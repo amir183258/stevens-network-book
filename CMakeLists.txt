@@ -165,3 +165,15 @@ target_link_libraries(tcpservselect01
 set_target_properties(tcpservselect01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tcpdiserv
 )
+
+##
+
+add_executable(tcpservpoll01
+	src/tcpdiserv/tcpservpoll01.c
+)
+target_link_libraries(tcpservpoll01
+	unp
+)
+set_target_properties(tcpservpoll01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tcpdiserv
+)
