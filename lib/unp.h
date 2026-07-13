@@ -131,6 +131,7 @@ int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout);
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
 
 /* error.c */
+void err_ret(const char *fmt, ...);
 void err_sys(const char *fmt, ...);
 void err_quit(const char *fmt, ...);
 
