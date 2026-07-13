@@ -177,3 +177,15 @@ target_link_libraries(tcpservpoll01
 set_target_properties(tcpservpoll01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tcpdiserv
 )
+
+##
+
+add_executable(checkopts
+	src/sockopt/checkopts.c
+)
+target_link_libraries(checkopts
+	unp
+)
+set_target_properties(checkopts PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sockopt
+)
