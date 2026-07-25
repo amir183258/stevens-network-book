@@ -213,3 +213,15 @@ target_link_libraries(exercise_7_2_client
 set_target_properties(exercise_7_2_client PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/exercises/exercise_7_2
 )
+
+##
+
+add_executable(exercise_7_3_tcpcli01
+	src/exercises/exercise_7_3/exercise_7_3_tcpcli01.c
+)
+target_link_libraries(exercise_7_3_tcpcli01
+	unp
+)
+set_target_properties(exercise_7_3_tcpcli01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/exercises/exercise_7_3
+)
