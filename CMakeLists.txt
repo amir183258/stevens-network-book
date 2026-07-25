@@ -189,3 +189,15 @@ target_link_libraries(checkopts
 set_target_properties(checkopts PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sockopt
 )
+
+##
+
+add_executable(exercise_7_1
+	src/exercises/exercise_7_1.c
+)
+target_link_libraries(exercise_7_1
+	unp
+)
+set_target_properties(exercise_7_1 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/exercises
+)
