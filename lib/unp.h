@@ -48,10 +48,12 @@ typedef void Sigfunc(int);
 
 /* sock_ntop.c */
 char* sock_ntop(const SA *sa, socklen_t salen);
+char* Sock_ntop(const SA *sa, socklen_t salen);
 
 /* wrapunix.c */
 void Close(int fd);
 pid_t Fork(void);
+void* Malloc(size_t size);
 ssize_t Read(int fd, void *ptr, size_t nbytes);
 void Write(int fd, void *ptr, size_t nbytes);
 
