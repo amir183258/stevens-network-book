@@ -239,3 +239,15 @@ target_link_libraries(udpserv01
 set_target_properties(udpserv01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/udpcliserv
 )
+
+##
+
+add_executable(udpcli01
+	src/udpcliserv/udpcli01.c
+)
+target_link_libraries(udpcli01
+	unp
+)
+set_target_properties(udpcli01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/udpcliserv
+)
