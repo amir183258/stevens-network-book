@@ -26,6 +26,7 @@ add_library(unp STATIC
 	lib/wrapstdio.c
 	lib/str_cli.c
 	lib/signal.c
+	lib/dg_echo.c
 )
 
 target_include_directories(unp PUBLIC
