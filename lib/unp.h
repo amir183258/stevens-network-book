@@ -116,6 +116,9 @@ void str_cli(FILE *fp, int sockfd);
 /* dg_echo.c */
 void dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen);
 
+/* dg_cli.c */
+void dg_cli(FILE *fp, int sockfd, const SA *pservaddr, socklen_t servlen);
+
 /* sinal.c */
 Sigfunc* signal(int signo, Sigfunc *func);
 Sigfunc* Signal(int signo, Sigfunc *func);
