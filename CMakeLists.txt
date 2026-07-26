@@ -226,3 +226,15 @@ target_link_libraries(exercise_7_3_tcpcli01
 set_target_properties(exercise_7_3_tcpcli01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/exercises/exercise_7_3
 )
+
+##
+
+add_executable(udpserv01
+	src/udpcliserv/udpserv01.c
+)
+target_link_libraries(udpserv01
+	unp
+)
+set_target_properties(udpserv01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/udpcliserv
+)
