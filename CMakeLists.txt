@@ -27,6 +27,7 @@ add_library(unp STATIC
 	lib/str_cli.c
 	lib/signal.c
 	lib/dg_echo.c
+	lib/dg_cli.c
 )
 
 target_include_directories(unp PUBLIC
