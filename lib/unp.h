@@ -113,6 +113,9 @@ void Fputs(const char *ptr, FILE *stream);
 /* str_cli.c */
 void str_cli(FILE *fp, int sockfd);
 
+/* dg_echo.c */
+void dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen);
+
 /* sinal.c */
 Sigfunc* signal(int signo, Sigfunc *func);
 Sigfunc* Signal(int signo, Sigfunc *func);
@@ -128,7 +131,9 @@ void Listen(int fd, int backlog);
 #ifdef HAVE_POLL
 int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout);
 #endif
+ssize_t Recvfrom(int fd, void *ptr, size_t nbytes, int flags, struct sockaddr *sa, socklen_t *salenptr);
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
+void Sendto(int fd, const void *ptr, size_t nbytes, int flags, const struct sockaddr *sa, socklen_t salen);
 
 /* error.c */
 void err_ret(const char *fmt, ...);

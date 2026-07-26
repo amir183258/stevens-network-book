@@ -82,10 +82,22 @@ int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout) {
 }
 #endif
 
+ssize_t Recvfrom(int fd, void *ptr, size_t nbytes, int flags, struct sockaddr *sa, socklen_t *salenptr) {
+	ssize_t n;
+	if ( (n = recvfrom(fd, ptr, nbytes, flags, sa, salenptr)) < 0)
+		err_sys("recvfrom error");
+	return n;
+}
+
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
 		struct timeval *timeout) {
 	int n;
 	if ( (n = select(nfds, readfds, writefds, exceptfds, timeout)) < 0)
 		err_sys("select error");
 	return n;
+}
+
+void Sendto(int fd, const void *ptr, size_t nbytes, int flags, const struct sockaddr *sa, socklen_t salen) {
+	if (sendto(fd, ptr, nbytes, flags, sa, salen) != (ssize_t)nbytes)
+		err_sys("sendto error");
 }
