@@ -303,3 +303,16 @@ target_link_libraries(udpserv06
 set_target_properties(udpserv06 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/udpcliserv
 )
+
+##
+
+add_executable(udpservselect01
+	src/udpcliserv/udpservselect01.c
+	src/udpcliserv/sigchldwaitpid.c
+)
+target_link_libraries(udpservselect01
+	unp
+)
+set_target_properties(udpservselect01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/udpcliserv
+)
