@@ -139,6 +139,7 @@ int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout);
 ssize_t Recvfrom(int fd, void *ptr, size_t nbytes, int flags, struct sockaddr *sa, socklen_t *salenptr);
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
 void Sendto(int fd, const void *ptr, size_t nbytes, int flags, const struct sockaddr *sa, socklen_t salen);
+void Setsockopt(int fd, int level, int optname, const void *optval, socklen_t optlen);
 
 /* error.c */
 void err_ret(const char *fmt, ...);
