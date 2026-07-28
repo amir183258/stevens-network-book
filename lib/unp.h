@@ -22,8 +22,9 @@
 #include <sys/types.h> // ssize_t
 #include <poll.h>
 
-#define MAXLINE 4096
-#define LISTENQ 1024
+#define MAXLINE 	4096
+#define LISTENQ 	1024
+#define BUFFSIZE	8192
 
 /* Define some port number that can be used for examples */
 #define SERV_PORT 9877
