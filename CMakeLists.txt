@@ -316,3 +316,19 @@ target_link_libraries(udpservselect01
 set_target_properties(udpservselect01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/udpcliserv
 )
+
+##
+
+add_executable(sctpserv01
+	src/sctp/sctpserv01.c
+	src/sctp/sctp_getnostrm.c
+	src/sctp/sctp_addr_to_associd.c
+	src/sctp/sctp_wrapper.c
+)
+target_link_libraries(sctpserv01 PRIVATE
+	unp
+	sctp
+)
+set_target_properties(sctpserv01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sctp
+)
