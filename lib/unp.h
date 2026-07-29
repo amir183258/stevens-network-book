@@ -133,6 +133,7 @@ int Socket(int family, int type, int protocol);
 void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
 void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr);
+void Getsockopt(int fd, int level, int optname, void *optval, socklen_t *optlenptr);
 void Listen(int fd, int backlog);
 #ifdef HAVE_POLL
 int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout);
