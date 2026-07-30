@@ -11,7 +11,7 @@
 
 #include "unp.h"
 
-int sctp_get_no_strms(int sock_fd, struct sockaddr *to, socklen_t tolen) {
+int sctp_get_no_strms(int sock_fd, int assoc_id, struct sockaddr *to, socklen_t tolen) {
 	int retsz;
 	struct sctp_status status;
 	retsz = sizeof(status);
@@ -19,8 +19,15 @@ int sctp_get_no_strms(int sock_fd, struct sockaddr *to, socklen_t tolen) {
 
 	sctp_assoc_t sctp_address_to_associd(int, struct sockaddr*, socklen_t);
 
-	status.sstat_assoc_id = sctp_address_to_associd(sock_fd, to, tolen);
-	Getsockopt(sock_fd, IPPROTO_SCTP, SCTP_STATUS, &status, &retsz);
+	// WARNING: the book used below codes to get status. They do not work.
+	// I took asso_id as a parameter in this function. Also, Getosockopt()
+	// does not work with STCP on my system.
+	//
+	//status.sstat_assoc_id = sctp_address_to_associd(sock_fd, to, tolen);
+	//Getsockopt(sock_fd, IPPROTO_SCTP, SCTP_STATUS, &status, &retsz);
+
+	sctp_opt_info(sock_fd, assoc_id,
+			SCTP_STATUS, &status, &retsz);
 
 	return status.sstat_outstrms;
 }
