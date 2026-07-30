@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 	size_t rd_sz;
 
 	// declare functions
-	int sctp_get_no_strms(int, struct sockaddr*, socklen_t);
+	int sctp_get_no_strms(int, int, struct sockaddr*, socklen_t);
 	int Sctp_recvmsg(int, void*, size_t, struct sockaddr*, socklen_t*,
 			struct sctp_sndrcvinfo*, int*);
 	int Sctp_sendmsg(int, void*, size_t, struct sockaddr*, socklen_t,
@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
 		if (stream_increment) {
 			sri.sinfo_stream++;
 			if (sri.sinfo_stream >=
-					sctp_get_no_strms(sock_fd, (SA *) &cliaddr, len))
+					sctp_get_no_strms(sock_fd, sri.sinfo_assoc_id, (SA *) &cliaddr, len))
 				sri.sinfo_stream = 0;
 		}
 		Sctp_sendmsg(sock_fd, readbuf, rd_sz,
