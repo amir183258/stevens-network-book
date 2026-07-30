@@ -333,3 +333,18 @@ target_link_libraries(sctpserv01 PRIVATE
 set_target_properties(sctpserv01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sctp
 )
+
+##
+
+add_executable(sctpclient01
+	src/sctp/sctpclient01.c
+	src/sctp/sctp_wrapper.c
+	src/sctp/sctp_strcli.c
+)
+target_link_libraries(sctpclient01 PRIVATE
+	unp
+	sctp
+)
+set_target_properties(sctpclient01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sctp
+)
