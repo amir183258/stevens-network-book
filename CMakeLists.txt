@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(unp_examples C)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
 
 # unp library
 add_library(unp STATIC
