@@ -13,6 +13,8 @@
 #include "unp.h"
 
 sctp_assoc_t sctp_address_to_associd(int sock_fd, struct sockaddr *sa, socklen_t salen) {
+	// WARNING: I tried to use this function as the book; But this function
+	// always returns 0.
 	struct sctp_paddrparams sp;
 	int siz;
 
