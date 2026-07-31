@@ -28,6 +28,7 @@ int main(int argc, char **argv) {
 
 	// function declaration
 	void sctpstr_cli(FILE*, int, struct sockaddr*, socklen_t);
+	void sctpstr_cli_echoall(FILE*, int, struct sockaddr*, socklen_t);
 
 	sock_fd = Socket(AF_INET, SOCK_SEQPACKET, IPPROTO_SCTP);
 	bzero(&servaddr, sizeof(servaddr));
@@ -41,8 +42,8 @@ int main(int argc, char **argv) {
 	Setsockopt(sock_fd, IPPROTO_SCTP, SCTP_EVENTS, &evnts, sizeof(evnts));
 	if (echo_to_all == 0)
 		sctpstr_cli(stdin, sock_fd, (SA *) &servaddr, sizeof(servaddr));
-	//else
-	//	sctpstr_cli_echoall(stdin, sock_fd, (SA *) &servaddr, sizeof(servaddr));
+	else
+		sctpstr_cli_echoall(stdin, sock_fd, (SA *) &servaddr, sizeof(servaddr));
 
 	Close(sock_fd);
 
