@@ -26,6 +26,8 @@
 #define LISTENQ 	1024
 #define BUFFSIZE	8192
 
+#define SERV_MAX_SCTP_STRM 10
+
 /* Define some port number that can be used for examples */
 #define SERV_PORT 9877
 #define SERV_PORT_STR "9877"
