@@ -3,7 +3,8 @@
  * Project:  Stevens Book - Echo Server Project in SCTP
  * Purpose:  This is the server file of the SCTP iterative server. Server
  * 	     creates association and receive and send messages in different
- * 	     streams.
+ * 	     streams. In this file, we set the number of streams as a socket
+ * 	     option.
  * Author:   A. H. Ebrahimi <amirhossein183258 at gmail.com>
  *
  ****************************************************************************/
