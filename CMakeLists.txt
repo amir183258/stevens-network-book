@@ -365,3 +365,19 @@ target_link_libraries(sctpserv02 PRIVATE
 set_target_properties(sctpserv02 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sctp
 )
+
+##
+
+add_executable(sctpserv03
+	src/sctp/sctpserv03.c
+	src/sctp/sctp_getnostrm.c
+	src/sctp/sctp_addr_to_associd.c
+	src/sctp/sctp_wrapper.c
+)
+target_link_libraries(sctpserv03 PRIVATE
+	unp
+	sctp
+)
+set_target_properties(sctpserv03 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sctp
+)
