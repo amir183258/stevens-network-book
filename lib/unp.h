@@ -27,6 +27,7 @@
 #define BUFFSIZE	8192
 
 #define SERV_MAX_SCTP_STRM 10
+#define SERV_MORE_STRMS_SCTP 20
 
 /* Define some port number that can be used for examples */
 #define SERV_PORT 9877
