@@ -340,7 +340,7 @@ add_executable(sctpclient01
 	src/sctp/sctpclient01.c
 	src/sctp/sctp_wrapper.c
 	src/sctp/sctp_strcli.c
-	src/sctp/sctp_strcliecho.c
+	src/sctp/sctp_strcliecho2.c
 )
 target_link_libraries(sctpclient01 PRIVATE
 	unp
