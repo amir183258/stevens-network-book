@@ -109,6 +109,7 @@ int Sockfd_to_family(int sockfd);
 void str_echo(int sockfd);
 
 /* wraplib.c */
+const char* Inet_ntop(int family, const void *addrptr, char *strptr, size_t len);
 void Inet_pton(int family, const char *strptr, void *addrptr);
 
 /* wrapstdio.c */

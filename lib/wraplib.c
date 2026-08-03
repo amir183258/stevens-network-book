@@ -7,9 +7,22 @@
  *
  ****************************************************************************/
 
+#include <stdlib.h>
+
 #include <arpa/inet.h>
 
 #include "unp.h"
+
+const char* Inet_ntop(int family, const void *addrptr, char *strptr, size_t len) {
+	const char *ptr;
+
+	if (strptr == NULL) // check for old code
+		err_quit("NULL 3rd argument to inet_ntop");
+	if ( (ptr = inet_ntop(family, addrptr, strptr, len)) == NULL) // sets errno
+		err_sys("inet_ntop error");
+
+	return ptr;
+}
 
 void Inet_pton(int family, const char *strptr, void *addrptr) {
 	int n;
