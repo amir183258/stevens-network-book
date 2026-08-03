@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * Project:  Stevens Book - Get Host Name Project
+ * Project:  Stevens Book - Get Host By Name Project
  * Purpose:  This function returns the names of a host using gethostbyname().
  * Author:   A. H. Ebrahimi <amirhossein183258 at gmail.com>
  *
