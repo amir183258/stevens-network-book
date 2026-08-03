@@ -150,6 +150,7 @@ void Setsockopt(int fd, int level, int optname, const void *optval, socklen_t op
 /* error.c */
 void err_ret(const char *fmt, ...);
 void err_sys(const char *fmt, ...);
+void err_msg(const char *fmt, ...);
 void err_quit(const char *fmt, ...);
 
 #endif
