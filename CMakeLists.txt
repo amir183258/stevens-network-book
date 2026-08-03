@@ -397,3 +397,15 @@ target_link_libraries(sctpclient02 PRIVATE
 set_target_properties(sctpclient02 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/sctp
 )
+
+##
+
+add_executable(hostent
+	src/names/hostent.c
+)
+target_link_libraries(hostent PRIVATE
+	unp
+)
+set_target_properties(sctpclient02 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
+)
