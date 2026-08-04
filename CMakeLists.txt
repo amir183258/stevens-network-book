@@ -406,6 +406,18 @@ add_executable(hostent
 target_link_libraries(hostent PRIVATE
 	unp
 )
-set_target_properties(sctpclient02 PROPERTIES
+set_target_properties(hostent PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
+)
+
+##
+
+add_executable(daytimetcpcli1
+	src/names/daytimetcpcli1.c
+)
+target_link_libraries(daytimetcpcli1 PRIVATE
+	unp
+)
+set_target_properties(daytimetcpcli1 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
 )
