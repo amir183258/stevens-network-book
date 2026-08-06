@@ -53,3 +53,7 @@ int tcp_listen(const char *host, const char *serv, socklen_t *addrlenp) {
 
 	return listenfd;
 }
+
+int Tcp_listen(const char *host, const char *serv, socklen_t *addrlenp) {
+	return tcp_listen(host, serv, addrlenp);
+}
