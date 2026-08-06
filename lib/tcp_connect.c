@@ -44,3 +44,7 @@ int tcp_connect(const char *host, const char *serv) {
 
 	return sockfd;
 }
+
+int Tcp_connect(const char *host, const char *serv) {
+	return tcp_connect(host, serv);
+}

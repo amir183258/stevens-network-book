@@ -160,5 +160,6 @@ struct addrinfo* host_serv(const char *host, const char *serv, int family, int s
 
 /* tcp_connect.c */
 int tcp_connect(const char *host, const char *serv);
+int Tcp_connect(const char *host, const char *serv);
 
 #endif
