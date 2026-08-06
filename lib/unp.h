@@ -137,6 +137,7 @@ int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Shutdown(int fd, int how);
 int Socket(int family, int type, int protocol);
 void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
+void Getpeername(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
 void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Getsockopt(int fd, int level, int optname, void *optval, socklen_t *optlenptr);
