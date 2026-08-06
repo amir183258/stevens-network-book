@@ -6,10 +6,11 @@
  *
  ****************************************************************************/
 
+// this has to be here
+#include "unp.h"
+
 #include <sys/socket.h>
 #include <netinet/sctp.h>
-
-#include "unp.h"
 
 int Sctp_recvmsg(int s, void *msg, size_t len,
 		struct sockaddr *from, socklen_t *fromlen,

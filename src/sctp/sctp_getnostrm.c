@@ -6,10 +6,11 @@
  *
  ****************************************************************************/
 
+// this has to be here
+#include "unp.h"
+
 #include <sys/socket.h>
 #include <netinet/sctp.h>
-
-#include "unp.h"
 
 int sctp_get_no_strms(int sock_fd, int assoc_id, struct sockaddr *to, socklen_t tolen) {
 	int retsz;
