@@ -158,4 +158,7 @@ void err_quit(const char *fmt, ...);
 /* host_serv.c */
 struct addrinfo* host_serv(const char *host, const char *serv, int family, int socktype);
 
+/* tcp_connect.c */
+int tcp_connect(const char *host, const char *serv);
+
 #endif
