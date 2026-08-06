@@ -31,6 +31,7 @@ add_library(unp STATIC
 	lib/dg_cli.c
 	lib/host_serv.c
 	lib/tcp_connect.c
+	lib/tcp_listen.c
 )
 
 target_include_directories(unp PUBLIC
