@@ -18,9 +18,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#include <netdb.h>
 #include <sys/socket.h>
 #include <sys/types.h> // ssize_t
 #include <poll.h>
+#include <netinet/in.h>
 
 #define MAXLINE 	4096
 #define LISTENQ 	1024
@@ -152,5 +154,8 @@ void err_ret(const char *fmt, ...);
 void err_sys(const char *fmt, ...);
 void err_msg(const char *fmt, ...);
 void err_quit(const char *fmt, ...);
+
+/* host_serv.c */
+struct addrinfo* host_serv(const char *host, const char *serv, int family, int socktype);
 
 #endif
