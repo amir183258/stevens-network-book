@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 	struct sockaddr_storage ss;
 
 	if (argc != 3)
-		err_quit("usage: daytimetcpcli <hostname/IPaddress> <service/port#>");
+		err_quit("usage: daytimetcpcli_1_2 <hostname/IPaddress> <service/port#>");
 
 	sockfd = Tcp_connect(argv[1], argv[2]);
 
