@@ -448,3 +448,15 @@ target_link_libraries(daytimetcpsrv1_2 PRIVATE
 set_target_properties(daytimetcpsrv1_2 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
 )
+
+##
+
+add_executable(daytimetcpsrv2
+	src/names/daytimetcpsrv2.c
+)
+target_link_libraries(daytimetcpsrv2 PRIVATE
+	unp
+)
+set_target_properties(daytimetcpsrv2 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
+)
