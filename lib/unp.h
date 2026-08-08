@@ -176,5 +176,6 @@ int udp_connect(const char *host, const char *serv);
 
 /* udp_server.c */
 int udp_server(const char *host, const char *serv, socklen_t *addrlenp);
+int Udp_server(const char *host, const char *serv, socklen_t *addrlenp);
 
 #endif

@@ -45,3 +45,7 @@ int udp_server(const char *host, const char *serv, socklen_t *addrlenp) {
 
 	return sockfd;
 }
+
+int Udp_server(const char *host, const char *serv, socklen_t *addrlenp) {
+	return udp_server(host, serv, addrlenp);
+}
