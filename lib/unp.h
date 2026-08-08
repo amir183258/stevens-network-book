@@ -173,4 +173,8 @@ int Udp_client(const char *host, const char *serv, SA **saptr, socklen_t *lenp);
 
 /* udp_connect.c */
 int udp_connect(const char *host, const char *serv);
+
+/* udp_server.c */
+int udp_server(const char *host, const char *serv, socklen_t *addrlenp);
+
 #endif
