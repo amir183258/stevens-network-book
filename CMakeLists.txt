@@ -33,6 +33,7 @@ add_library(unp STATIC
 	lib/tcp_connect.c
 	lib/tcp_listen.c
 	lib/udp_client.c
+	lib/udp_connect.c
 )
 
 target_include_directories(unp PUBLIC
