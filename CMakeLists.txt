@@ -34,6 +34,7 @@ add_library(unp STATIC
 	lib/tcp_listen.c
 	lib/udp_client.c
 	lib/udp_connect.c
+	lib/udp_server.c
 )
 
 target_include_directories(unp PUBLIC
