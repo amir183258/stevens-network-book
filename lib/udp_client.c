@@ -45,3 +45,7 @@ int udp_client(const char *host, const char *serv, SA **saptr, socklen_t *lenp) 
 
 	return sockfd;
 }
+
+int Udp_client(const char *host, const char *serv, SA **saptr, socklen_t *lenptr) {
+	return udp_client(host, serv, saptr, lenptr);
+}

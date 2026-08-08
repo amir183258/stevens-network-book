@@ -169,5 +169,6 @@ int Tcp_listen(const char *host, const char *serv, socklen_t *addrlenp);
 
 /* udp_client.c */
 int udp_client(const char *host, const char *serv, SA **saptr, socklen_t *lenp);
+int Udp_client(const char *host, const char *serv, SA **saptr, socklen_t *lenp);
 
 #endif
