@@ -475,3 +475,15 @@ target_link_libraries(daytimeudpcli1 PRIVATE
 set_target_properties(daytimeudpcli1 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
 )
+
+##
+
+add_executable(daytimeudpsrv2
+	src/names/daytimeudpsrv2.c
+)
+target_link_libraries(daytimeudpsrv2 PRIVATE
+	unp
+)
+set_target_properties(daytimeudpsrv2 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
+)
