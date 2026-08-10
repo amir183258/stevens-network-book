@@ -35,6 +35,7 @@ add_library(unp STATIC
 	lib/udp_client.c
 	lib/udp_connect.c
 	lib/udp_server.c
+	lib/daemon_init.c
 )
 
 target_include_directories(unp PUBLIC
