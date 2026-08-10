@@ -178,4 +178,7 @@ int udp_connect(const char *host, const char *serv);
 int udp_server(const char *host, const char *serv, socklen_t *addrlenp);
 int Udp_server(const char *host, const char *serv, socklen_t *addrlenp);
 
+/* daemon_init.c */
+int daemon_init(const char *pname, int facility);
+
 #endif
