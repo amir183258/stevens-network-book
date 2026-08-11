@@ -488,3 +488,15 @@ target_link_libraries(daytimeudpsrv2 PRIVATE
 set_target_properties(daytimeudpsrv2 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/names
 )
+
+##
+
+add_executable(daytimetcpsrv2d
+	src/inetd/daytimetcpsrv2d.c
+)
+target_link_libraries(daytimetcpsrv2d PRIVATE
+	unp
+)
+set_target_properties(daytimetcpsrv2d PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/inetd
+)
