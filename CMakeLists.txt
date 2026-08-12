@@ -501,3 +501,16 @@ target_link_libraries(daytimetcpsrv2d PRIVATE
 set_target_properties(daytimetcpsrv2d PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/inetd
 )
+
+##
+
+add_executable(dgclitimeo3
+	src/udpcliserv/udpcli01.c
+	src/advio/dgclitimeo3.c
+)
+target_link_libraries(dgclitimeo3
+	unp
+)
+set_target_properties(dgclitimeo3 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/advio
+)
