@@ -181,4 +181,7 @@ int Udp_server(const char *host, const char *serv, socklen_t *addrlenp);
 /* daemon_init.c */
 int daemon_init(const char *pname, int facility);
 
+/* connect_timeo.c */
+int connect_timeo(int sockfd, const SA *saptr, socklen_t salen, int nsec);
+
 #endif
