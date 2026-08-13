@@ -29,7 +29,7 @@ int readable_timeo(int fd, int sec) {
 
 int Readable_timeo(int fd, int sec) {
 	int n;
-	if ( (n = readable_timeo(fd, sec) < 0))
+	if ( (n = readable_timeo(fd, sec)) < 0)
 		err_sys("readable_timeo error");
 	return n;
 }
