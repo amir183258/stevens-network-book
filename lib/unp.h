@@ -186,5 +186,6 @@ int connect_timeo(int sockfd, const SA *saptr, socklen_t salen, int nsec);
 
 /* readable_timeo.c */
 int readable_timeo(int fd, int sec);
+int Readable_timeo(int fd, int sec);
 
 #endif

@@ -26,3 +26,10 @@ int readable_timeo(int fd, int sec) {
 	// > 0 if descriptor is readable
 	return select(fd + 1, &rset, NULL, NULL, &tv);
 }
+
+int Readable_timeo(int fd, int sec) {
+	int n;
+	if ( (n = readable_timeo(fd, sec) < 0))
+		err_sys("readable_timeo error");
+	return n;
+}
