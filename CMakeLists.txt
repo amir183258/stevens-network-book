@@ -515,3 +515,16 @@ target_link_libraries(dgclitimeo3
 set_target_properties(dgclitimeo3 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/advio
 )
+
+##
+
+add_executable(dgclitimeo1
+	src/udpcliserv/udpcli01.c
+	src/advio/dgclitimeo1.c
+)
+target_link_libraries(dgclitimeo1
+	unp
+)
+set_target_properties(dgclitimeo1 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/advio
+)
