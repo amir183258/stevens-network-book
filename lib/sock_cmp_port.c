@@ -17,11 +17,11 @@ int sock_cmp_port(const struct sockaddr *sa1, const struct sockaddr *sa2, sockle
 
 	switch (sa1->sa_family) {
 	case AF_INET:
-		return ( ((struct sockaddr_in *) sa1)->sin_port == // <netinet/in.h>
+		return ( ((struct sockaddr_in *) sa1)->sin_port ==
 				((struct sockaddr_in *) sa2)->sin_port);
 #ifdef IPV6
 	case AF_INET6:
-		return ( ((struct sockaddr_in6 *) sa1)->sin6_port == // <netinet/in.h>
+		return ( ((struct sockaddr_in6 *) sa1)->sin6_port ==
 				((struct sockaddr_in6 *) sa2)->sin6_port);
 #endif
 	}

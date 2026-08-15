@@ -18,19 +18,19 @@ int sock_bind_wild(int sockfd, int family) {
 
 	switch (family) {
 	case AF_INET:
-		struct sockaddr_in sin; // <sys/socket.h>
+		struct sockaddr_in sin;
 
 		bzero(&sin, sizeof(sin));
 		sin.sin_family = AF_INET;
-		sin.sin_addr.s_addr = htonl(INADDR_ANY); // <arpa/inet.h>
+		sin.sin_addr.s_addr = htonl(INADDR_ANY);
 
 		/* bind ephemeral port */
-		sin.sin_port = htons(0); // <arpa/inet.h>
+		sin.sin_port = htons(0);
 
 		if (bind(sockfd, (SA *) &sin, sizeof(sin)) < 0)
 			return -1;
 		len = sizeof(sin);
-		if (getsockname(sockfd, (SA *) &sin, &len) < 0) // <sys/socket.h>
+		if (getsockname(sockfd, (SA *) &sin, &len) < 0)
 			return  -1;
 		return sin.sin_port;
 
@@ -40,8 +40,8 @@ int sock_bind_wild(int sockfd, int family) {
 
 		bzero(&sin6, sizeof(sin6));
 		sin6.sin6_family = AF_INET6;
-		sin6.sin6_addr = in6addr_any; // <netinet/in.h>
-		sin6.sin6_port = htons(0); // <arpa/inet.h>
+		sin6.sin6_addr = in6addr_any;
+		sin6.sin6_port = htons(0);
 
 		if (bind(sockfd, (SA *) &sin6, sizeof(sin6)) < 0)
 			return -1;
