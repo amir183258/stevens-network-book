@@ -116,6 +116,7 @@ void Inet_pton(int family, const char *strptr, void *addrptr);
 
 /* wrapstdio.c */
 void Fclose(FILE *fp);
+FILE* Fdopen(int fd, const char *type);
 char* Fgets(char *ptr, int n, FILE *stream);
 void Fputs(const char *ptr, FILE *stream);
 

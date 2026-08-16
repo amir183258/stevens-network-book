@@ -16,6 +16,15 @@ void Fclose(FILE *fp) {
 		err_sys("fclose error");
 }
 
+FILE* Fdopen(int fd, const char *type) {
+	FILE *fp;
+
+	if ( (fp = fdopen(fd, type)) == NULL)
+		err_sys("fdopen error");
+
+	return fp;
+}
+
 char* Fgets(char *ptr, int n, FILE *stream) {
 	char *rptr;
 
