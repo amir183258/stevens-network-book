@@ -541,3 +541,17 @@ target_link_libraries(dgclitimeo2
 set_target_properties(dgclitimeo2 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/advio
 )
+
+##
+
+add_executable(tcpserv04_standard_io
+	src/tcpdiserv/tcpserv04.c
+	src/tcpdiserv/sigchldwaitpid.c
+	src/advio/str_echo_stdio02.c
+)
+target_link_libraries(tcpserv04_standard_io
+	unp
+)
+set_target_properties(tcpserv04_standard_io PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/advio
+)
