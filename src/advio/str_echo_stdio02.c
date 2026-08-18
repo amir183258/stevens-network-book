@@ -20,6 +20,9 @@ void str_echo(int sockfd) {
 
 	while (Fgets(line, MAXLINE, fpin) != NULL) {
 		Fputs(line, fpout);
+
+		// the standar I/O functions are fully buffered for sockets.
+		// so we have to use fflush().
 		//fflush(fpout);
 	}
 }
