@@ -18,10 +18,13 @@ void str_echo(int sockfd) {
 	fpin = Fdopen(sockfd, "r");
 	fpout = Fdopen(sockfd, "w");
 
+	// be careful here; client may need to read bytes from server
+	// and it will be blocked here because server use buffer.
+	// so the results are not exactly what in the book.
 	while (Fgets(line, MAXLINE, fpin) != NULL) {
 		Fputs(line, fpout);
 
-		// the standar I/O functions are fully buffered for sockets.
+		// the standard I/O functions are fully buffered for sockets.
 		// so we have to use fflush().
 		//fflush(fpout);
 	}
