@@ -555,3 +555,15 @@ target_link_libraries(tcpserv04_standard_io
 set_target_properties(tcpserv04_standard_io PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/advio
 )
+
+##
+
+add_executable(unixbind
+	src/unixdomain/unixbind.c
+)
+target_link_libraries(unixbind
+	unp
+)
+set_target_properties(unixbind PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
+)
