@@ -567,3 +567,15 @@ target_link_libraries(unixbind
 set_target_properties(unixbind PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
 )
+
+##
+
+add_executable(unixstrcli01
+	src/unixdomain/unixstrcli01.c
+)
+target_link_libraries(unixstrcli01
+	unp
+)
+set_target_properties(unixstrcli01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
+)
