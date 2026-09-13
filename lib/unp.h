@@ -35,6 +35,7 @@
 #define SERV_PORT 9877
 #define SERV_PORT_STR "9877"
 #define UNIXSTR_PATH "/tmp/unix.str" // unix domain stream
+#define UNIXDG_PATH "/tmp/unix.dg" // unix domain datagram
 
 /* Shortens all the typecasts of pointer arguments: */
 #define SA struct sockaddr
