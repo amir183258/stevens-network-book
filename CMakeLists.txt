@@ -603,3 +603,16 @@ target_link_libraries(unixdgcli01
 set_target_properties(unixdgcli01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
 )
+
+##
+
+add_executable(unixstrserv01
+	src/unixdomain/unixstrserv01.c
+	src/tcpdiserv/sigchldwait.c
+)
+target_link_libraries(unixstrserv01
+	unp
+)
+set_target_properties(unixstrserv01 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
+)
