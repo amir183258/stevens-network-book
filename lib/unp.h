@@ -64,6 +64,7 @@ pid_t Fork(void);
 void* Malloc(size_t size);
 ssize_t Read(int fd, void *ptr, size_t nbytes);
 void Write(int fd, void *ptr, size_t nbytes);
+pid_t Waitpid(pid_t pid, int *iptr, int options);
 
 /* sock_bind_wild.c */
 int sock_bind_wild(int sockfd, int family);
