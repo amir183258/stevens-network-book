@@ -38,6 +38,7 @@ add_library(unp STATIC
 	lib/daemon_init.c
 	lib/connect_timeo.c
 	lib/readable_timeo.c
+	lib/read_fd.c
 )
 
 target_include_directories(unp PUBLIC
