@@ -195,4 +195,8 @@ int Readable_timeo(int fd, int sec);
 
 /* read_fd.c */
 ssize_t Read_fd(int fd, void *ptr, size_t nbytes, int *recvd);
+
+/* write_fd.c */
+ssize_t Write_fd(int fd, void *ptr, size_t nbytes, int sendfd);
+
 #endif
