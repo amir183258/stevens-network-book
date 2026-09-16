@@ -618,3 +618,15 @@ target_link_libraries(unixstrserv01
 set_target_properties(unixstrserv01 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
 )
+
+##
+
+add_executable(openfile
+	src/unixdomain/openfile.c
+)
+target_link_libraries(openfile
+	unp
+)
+set_target_properties(openfile PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
+)
