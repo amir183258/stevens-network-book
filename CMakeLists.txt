@@ -630,3 +630,16 @@ target_link_libraries(openfile
 set_target_properties(openfile PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
 )
+
+##
+
+add_executable(mycat
+	src/unixdomain/mycat.c
+	src/unixdomain/myopen.c
+)
+target_link_libraries(mycat
+	unp
+)
+set_target_properties(mycat PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
+)
