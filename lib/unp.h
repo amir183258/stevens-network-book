@@ -60,6 +60,7 @@ char* Sock_ntop(const SA *sa, socklen_t salen);
 
 /* wrapunix.c */
 void Close(int fd);
+int Fcntl(int fd, int cmd, int arg);
 pid_t Fork(void);
 void* Malloc(size_t size);
 ssize_t Read(int fd, void *ptr, size_t nbytes);
