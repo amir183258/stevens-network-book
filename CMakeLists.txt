@@ -40,6 +40,7 @@ add_library(unp STATIC
 	lib/readable_timeo.c
 	lib/read_fd.c
 	lib/write_fd.c
+	lib/gf_time.c
 )
 
 target_include_directories(unp PUBLIC
