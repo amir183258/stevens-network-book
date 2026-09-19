@@ -202,4 +202,7 @@ ssize_t Read_fd(int fd, void *ptr, size_t nbytes, int *recvfd);
 ssize_t write_fd(int fd, void *ptr, size_t nbytes, int sendfd);
 ssize_t Write_fd(int fd, void *ptr, size_t nbytes, int sendfd);
 
+/* gf_time.c */
+char* gf_time(void);
+
 #endif
