@@ -644,3 +644,17 @@ target_link_libraries(mycat
 set_target_properties(mycat PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/unixdomain
 )
+
+##
+
+add_executable(nonblockcli02
+	src/tcpdiserv/tcpcli01.c
+	src/nonblock/strclinonb.c
+
+)
+target_link_libraries(nonblockcli02
+	unp
+)
+set_target_properties(nonblockcli02 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
+)
