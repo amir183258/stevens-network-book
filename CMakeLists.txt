@@ -658,3 +658,17 @@ target_link_libraries(nonblockcli02
 set_target_properties(nonblockcli02 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
 )
+
+##
+
+add_executable(nonblockcli03
+	src/tcpdiserv/tcpcli01.c
+	src/nonblock/strclifork.c
+
+)
+target_link_libraries(nonblockcli03
+	unp
+)
+set_target_properties(nonblockcli03 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
+)
