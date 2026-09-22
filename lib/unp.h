@@ -205,4 +205,7 @@ ssize_t Write_fd(int fd, void *ptr, size_t nbytes, int sendfd);
 /* gf_time.c */
 char* gf_time(void);
 
+/* connect_nonb.c */
+int connect_nonb(int sockfd, const SA *saptr, socklen_t salen, int nsec);
+
 #endif
