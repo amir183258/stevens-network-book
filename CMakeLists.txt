@@ -41,6 +41,7 @@ add_library(unp STATIC
 	lib/read_fd.c
 	lib/write_fd.c
 	lib/gf_time.c
+	lib/connect_nonb.c
 )
 
 target_include_directories(unp PUBLIC
