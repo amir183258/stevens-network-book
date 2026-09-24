@@ -673,3 +673,18 @@ target_link_libraries(nonblockcli03
 set_target_properties(nonblockcli03 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
 )
+
+##
+
+add_executable(web
+	src/nonblock/web.c
+	src/nonblock/home_page.c
+	src/nonblock/start_connect.c
+	src/nonblock/write_get_cmd.c
+)
+target_link_libraries(web
+	unp
+)
+set_target_properties(web PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
+)
