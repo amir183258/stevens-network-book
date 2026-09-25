@@ -688,3 +688,15 @@ target_link_libraries(web
 set_target_properties(web PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
 )
+
+##
+
+add_executable(nonblock_tcpcli03
+	src/nonblock/tcpcli03.c
+)
+target_link_libraries(nonblock_tcpcli03
+	unp
+)
+set_target_properties(nonblock_tcpcli03 PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
+)
