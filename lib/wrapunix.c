@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
+#include <sys/ioctl.h>
 
 #include "./unp.h"
 
@@ -29,6 +30,13 @@ int Fcntl(int fd, int cmd, int arg) {
 		err_sys("fcntl error");
 
 	return n;
+}
+
+int Ioctl(int fd, int request, void *arg) {
+	int n;
+	if ( (n = ioctl(fd, request, arg)) == -1)
+		err_sys("ioctl error");
+	return n; // streamio of I_LIST returns value
 }
 
 pid_t Fork(void) {
