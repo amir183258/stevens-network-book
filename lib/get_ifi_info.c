@@ -186,3 +186,11 @@ void free_ifi_info(struct ifi_info *ifihead) {
 		free(ifi);
 	}
 }
+
+struct ifi_info* Get_ifi_info(int family, int doaliases) {
+	struct ifi_info *ifi;
+
+	if ( (ifi = get_ifi_info(family, doaliases)) == NULL)
+		err_quit("get_ifi_info error");
+	return ifi;
+}
