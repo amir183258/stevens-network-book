@@ -18,6 +18,15 @@
 
 #include "./unp.h"
 
+void* Calloc(size_t n, size_t size) {
+	void *ptr;
+
+	if ( (ptr = calloc(n, size)) == NULL)
+		err_sys("calloc error");
+
+	return ptr;
+}
+
 void Close(int fd) {
 	if (close(fd) == -1)
 		err_sys("close error");

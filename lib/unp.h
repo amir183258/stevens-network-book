@@ -59,6 +59,7 @@ char* sock_ntop(const SA *sa, socklen_t salen);
 char* Sock_ntop(const SA *sa, socklen_t salen);
 
 /* wrapunix.c */
+void* Calloc(size_t n, size_t size);
 void Close(int fd);
 int Fcntl(int fd, int cmd, int arg);
 pid_t Fork(void);
