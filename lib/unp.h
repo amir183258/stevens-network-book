@@ -62,6 +62,7 @@ char* Sock_ntop(const SA *sa, socklen_t salen);
 void* Calloc(size_t n, size_t size);
 void Close(int fd);
 int Fcntl(int fd, int cmd, int arg);
+int Ioctl(int fd, int request, void *arg);
 pid_t Fork(void);
 void* Malloc(size_t size);
 ssize_t Read(int fd, void *ptr, size_t nbytes);
