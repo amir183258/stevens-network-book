@@ -42,6 +42,7 @@ add_library(unp STATIC
 	lib/write_fd.c
 	lib/gf_time.c
 	lib/connect_nonb.c
+	lib/get_ifi_info.c
 )
 
 target_include_directories(unp PUBLIC
