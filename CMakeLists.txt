@@ -701,3 +701,15 @@ target_link_libraries(nonblock_tcpcli03
 set_target_properties(nonblock_tcpcli03 PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nonblock
 )
+
+##
+
+add_executable(prifinfo
+	src/ioctl/prifinfo.c
+)
+target_link_libraries(prifinfo
+	unp
+)
+set_target_properties(prifinfo PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/ioctl
+)
