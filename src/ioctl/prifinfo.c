@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 	struct ifi_info *ifi, *ifihead;
 	struct sockaddr *sa;
 	u_char *ptr;
-	int i, family, doaiases;
+	int i, family, doaliases;
 	if (argc != 3)
 		err_quit("usage: prifinfo <inet4|inet6> <doaliases>");
 	if (strcmp(argv[1], "inet4") == 0)
