@@ -7,7 +7,7 @@
  *
  ****************************************************************************/
 
-#include <stdib.h>
+#include <stdlib.h>
 
 #include <sys/socket.h>
 #include <sys/ioctl.h>
@@ -98,6 +98,91 @@ struct ifi_info* get_ifi_info(int family, int doaliases) {
 		flags = ifrcopy.ifr_flags;
 		if ((flags & IFF_UP) == 0)
 			continue; // ignore if interface not up
-	}
 
+		ifi = Calloc(1, sizeof(struct ifi_info));
+		*ifipnext = ifi; // prev points to this new one
+		ifipnext = &ifi->ifi_next; // pointer to next one goes here
+
+		ifi->ifi_flags = flags; // IFF_xxx values
+		ifi->ifi_myflags = myflags; // IFI_xxx values
+#if defined(SIOCGIFMTU) && defined(HAVE_STRUCT_IFREQ_IFR_MTU)
+		Ioctl(sockfd, SIOCGIFMTU, &ifrcopy);
+		ifi->ifi_mtu = ifrcopy.ifr_mtu;
+#else
+		ifi->ifi_mtu = 0;
+#endif
+		memcpy(ifi->ifi_name, ifr->ifr_name, IFI_NAME);
+		ifi->ifi_name[IFI_NAME - 1] = '\0';
+		// if the sockaddr_dl is from a different interface, ignore it
+		if (sdlname == NULL || strcmp(sdlname, ifr->ifr_name) != 0)
+			idx = hlen = 0;
+		ifi->ifi_index = idx;
+		ifi->ifi_hlen = hlen;
+		if (ifi->ifi_hlen > IFI_HADDR)
+			ifi->ifi_hlen = IFI_HADDR;
+		if (hlen)
+			memcpy(ifi->ifi_haddr, haddr, ifi->ifi_hlen);
+
+		switch (ifr->ifr_addr.sa_family) {
+		case AF_INET:
+			sinptr = (struct sockaddr_in *) &ifr->ifr_addr;
+			ifi->ifi_addr = Calloc(1, sizeof(struct sockaddr_in));
+			memcpy(ifi->ifi_addr, sinptr, sizeof(struct sockaddr_in));
+
+#ifdef SIOCGIFBRDADDR
+			if (flags & IFF_BROADCAST) {
+				Ioctl(sockfd, SIOCGIFBRDADDR, &ifrcopy);
+				sinptr = (struct sockaddr_in *) &ifrcopy.ifr_broadaddr;
+				ifi->ifi_brdaddr = Calloc(1, sizeof(struct sockaddr_in));
+				memcpy(ifi->ifi_brdaddr, sinptr, sizeof(struct sockaddr_in));
+			}
+#endif
+
+#ifdef SIOCGIFDSTADDR
+			if (flags & IFF_POINTOPOINT) {
+				Ioctl(sockfd, SIOCGIFDSTADDR, &ifrcopy);
+				sinptr = (struct sockaddr_in *) &ifrcopy.ifr_dstaddr;
+				ifi->ifi_dstaddr = Calloc(1, sizeof(struct sockaddr_in));
+				memcpy(ifi->ifi_dstaddr, sinptr, sizeof(struct sockaddr_in));
+			}
+#endif
+			break;
+
+		case AF_INET6:
+			sin6ptr = (struct sockaddr_in6 *) &ifr->ifr_addr;
+			ifi->ifi_addr = Calloc(1, sizeof(struct sockaddr_in6));
+			memcpy(ifi->ifi_addr, sin6ptr, sizeof(struct sockaddr_in6));
+
+#ifdef SIOCGIFDSTADDR
+			if (flags & IFF_POINTOPOINT) {
+				Ioctl(sockfd, SIOCGIFDSTADDR, &ifrcopy);
+				sin6ptr = (struct sockaddr_in6 *) &ifrcopy.ifr_dstaddr;
+				ifi->ifi_dstaddr = Calloc(1, sizeof(struct sockaddr_in6));
+				memcpy(ifi->ifi_dstaddr, sin6ptr,
+						sizeof(struct sockaddr_in6));
+			}
+#endif
+			break;
+
+		default:
+			break;
+		}
+	}
+	free(buf);
+	return ifihead; // pointer to first structure in linked list
+}
+
+void free_ifi_info(struct ifi_info *ifihead) {
+	struct ifi_info *ifi, *ifinext;
+
+	for (ifi = ifihead; ifi != NULL; ifi = ifinext) {
+		if (ifi->ifi_addr != NULL)
+			free(ifi->ifi_addr);
+		if (ifi->ifi_brdaddr != NULL)
+			free(ifi->ifi_brdaddr);
+		if (ifi->ifi_dstaddr != NULL)
+			free(ifi->ifi_dstaddr);
+		ifinext = ifi->ifi_next; // can't fetch ifi_next after free()
+		free(ifi);
+	}
 }
